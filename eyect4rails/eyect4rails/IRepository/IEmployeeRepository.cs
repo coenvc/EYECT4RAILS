@@ -9,10 +9,7 @@ namespace eyect4rails.IRepository
 {
     public interface IEmployeeRepository
     {
-        List<Employee> GetAllEmployees();
-        void InsertEmployee(Employee employee);
-        void UpdateEmployee(Employee employee);
-        void DeleteEmployee(Employee employee);
+
         List<Employee> GetAll();
 
         Employee GetById(int id);

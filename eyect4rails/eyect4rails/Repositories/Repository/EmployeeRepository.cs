@@ -39,12 +39,12 @@ namespace eyect4rails.Repository
                 new Department(5, "Mechanics", 1)));
         }
 
-        public List<Employee> GetAllEmployees()
+        public List<Employee> GetAll()
         {
             return EmployeesList;
         }
 
-        public Employee GetEmployeeById(int id)
+        public Employee GetById(int id)
         {
             foreach (Employee employee in EmployeesList)
             {
@@ -116,29 +116,8 @@ namespace eyect4rails.Repository
             }
         }
 
-        public void InsertEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void UpdateEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void DeleteEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
 
-        public List<Employee> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Employee GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

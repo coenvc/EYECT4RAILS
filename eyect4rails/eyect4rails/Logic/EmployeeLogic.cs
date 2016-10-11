@@ -15,49 +15,79 @@ namespace eyect4rails.Logic
         {
             this.IemployeeRepository = iemployeerepository;
         }
-        public List<Employee> GetAllEmployees()
-        {
-            return IemployeeRepository.GetAllEmployees();
-        }
 
-        public void InsertEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Employee> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Employee GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Adds an employee to the EmployeeRepository 
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
         public bool Insert(Employee employee)
         {
-            throw new NotImplementedException();
+            if (IemployeeRepository.Insert(employee) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
+        /// <summary>
+        /// Updates an employee in the EmployeeRepository 
+        /// </summary>
+        /// <param name="employee">The new Instance of the Employee</param> 
+        /// <param name="id"
         public void Update(Employee employee, int id)
         {
-            throw new NotImplementedException();
+            IemployeeRepository.Update(employee, id);
         }
 
+        /// <summary>
+        /// Deletes an employee in the EmployeeRepository
+        /// with the given id
+        /// </summary>
+        /// <param name="id">The id of the user that will be deleted</param>
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (IemployeeRepository.Delete(id) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        /// <summary>
+        /// Gets alle employees in the database 
+        /// </summary>
+        /// <returns>A list of Employees</returns>
+        public List<Employee> GetAll()
+        {
+            List<Employee> allEmployees = IemployeeRepository.GetAll();
+            
+            return allEmployees;
+        }
+
+        /// <summary>
+        /// Gets an employee from the repository by the given id 
+        /// </summary>
+        /// <param name="id">Id of the requested employee</param>
+        /// <returns></returns>
+        public Employee GetById(int id)
+        { 
+            Employee returnEmployee = IemployeeRepository.GetById(id);
+
+            return returnEmployee;
+        }
+
+
+
+
+
+
+
     }
 }

@@ -4,27 +4,34 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using eyect4rails.Classes;
 using eyect4rails.Enums;
 using eyect4rails.IRepository;
 
 namespace eyect4rails.Repositories
 {
-    class MSSQLEmployeeRepository:Database,IEmployeeRepository
+    class MSSQLEmployeeRepository : Database, IEmployeeRepository
     {
-        public List<Employee> GetAllEmployees()
+        /// <summary>
+        /// Gets a list of every employee in the Database
+        /// </summary>
+        /// <returns>A list of Employees</returns>
+        public List<Employee> GetAll()
         {
             List<Employee> employees = new List<Employee>();
-            string query = "select e.id,ac.Username,e.email,ac.RFIDCode,e.name, ac.Password,r.Name,ad.id,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id,d.Name,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid";
+            string query =
+                "select e.id,ac.Username,e.email,ac.RFIDCode,e.name, ac.Password,r.Name,ad.id,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id,d.Name,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid";
             if (OpenConnection() == true)
             {
                 using (SqlCommand command = new SqlCommand(query, Connection))
-            {
+                {
                     using (SqlDataReader reader = command.ExecuteReader())
-                    { 
+                    {
                         while (reader.Read())
                         {
-                            Address address = new Address(Convert.ToInt32(reader["ad.id"]),reader[7].ToString(), reader[8].ToString(),
+                            Address address = new Address(Convert.ToInt32(reader["ad.id"]), reader[7].ToString(),
+                                reader[8].ToString(),
                                 reader[9].ToString(), reader[10].ToString(), reader[11].ToString());
                             Department department = new Department(Convert.ToInt32(reader[12]), reader[13].ToString(),
                                 Convert.ToInt32(reader[14]));
@@ -35,9 +42,9 @@ namespace eyect4rails.Repositories
                         }
                     }
                     Connection.Close();
-                    return employees; 
+                    return employees;
                 }
-               
+
             }
             else
             {
@@ -47,44 +54,154 @@ namespace eyect4rails.Repositories
 
         }
 
-        public void InsertEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Employee> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Employee GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Adds an Employee to the database 
+        /// </summary>
+        /// <param name="employee">The employee you want to add to the database</param>
         public bool Insert(Employee employee)
         {
-            throw new NotImplementedException();
+            string query =
+                "INSERT INTO Employee(RoleId,DepartmentID,AddressID,Name,Email) values(@RoleId,@DepartmentID,@AddressID,@Name,@Email)";
+            if (OpenConnection() == true)
+            {
+                using (SqlCommand command = new SqlCommand(query, Connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@RoleId", (int) employee.Role);
+                        command.Parameters.AddWithValue("@DepartmentID", employee.Department.Id);
+                        command.Parameters.AddWithValue("@AddressID", employee.Address.Id);
+                        command.Parameters.AddWithValue("@Name", employee.Name);
+                        command.Parameters.AddWithValue("@Email", employee.Email);
+                        //TODO: ADD TELEFOONNUMMER TO DB
+                        command.ExecuteNonQuery();
+                        CloseConnection();
+                        return true;
+                    }
+                    catch (SqlException exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                        CloseConnection();
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
+        /// <summary>
+        /// Updates the values of an employee
+        /// </summary>
+        /// <param name="employee">The new employee</param> 
+        /// <param name="id">the id of the employee that needs to be updates</param>
         public void Update(Employee employee, int id)
         {
-            throw new NotImplementedException();
+            string query ="Update Employee SET RoleId = @RoleId, DepartmentID = @DepartmentID ,AddressID = @AddressID ,Name = @Name ,Email = @Email WHERE ID = @Id";
+
+            if (OpenConnection() == true)
+            {
+                using (SqlCommand command = new SqlCommand(query, Connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@RoleId", (int) employee.Role);
+                        command.Parameters.AddWithValue("@DepartmentID", employee.Department.Id);
+                        command.Parameters.AddWithValue("@AddressID", employee.Address.Id);
+                        command.Parameters.AddWithValue("@Name", employee.Name);
+                        command.Parameters.AddWithValue("@Email", employee.Email);
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
+
+                }
+
+            }
+            CloseConnection();
         }
 
+        /// <summary>
+        /// Removes an Employee from the database 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            string query = "DELETE FROM table_name WHERE some_column = @Id";
+            if (OpenConnection() == true)
+            {
+                using (SqlCommand command = new SqlCommand(query, Connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (SqlException exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                        return false;
+                    }
+
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Gets an employee from the database
+        /// </summary>
+        /// <param name="id">The is of the employee you need from the database</param>
+        /// <returns></returns>
+        public Employee GetById(int id)
+        {
+            Employee employee = null;
+            string query ="select e.id,ac.Username,e.email,ac.RFIDCode,e.name, ac.Password,r.Name,ad.id,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id,d.Name,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid where e.id = @myId";
+            if (OpenConnection() == true)
+            {
+                using (SqlCommand command = new SqlCommand(query, Connection))
+                {
+                    command.Parameters.AddWithValue("@myId", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        try
+                        {
+                            while (reader.Read())
+                            {
+                                    Address address = new Address(Convert.ToInt32(reader["ad.id"]), reader["ad.StreetName"].ToString(),reader["ad.City"].ToString(), reader["ad.Country"].ToString(), reader["ad.ZIPCode"].ToString(),reader["ad.HouseNumber"].ToString());
+                     
+                                    Department department = new Department(Convert.ToInt32(reader[12]),
+                                        reader[13].ToString(), Convert.ToInt32(reader[14]));
+                                    Employee Employee = new Employee(Convert.ToInt32(reader[0]), reader[1].ToString(),
+                                        reader[2].ToString(), Convert.ToInt32(reader[3]), reader[4].ToString(),
+                                        reader[5].ToString(), Role.Admin, address, department);
+                                    employee = Employee;
+                                
+                              
+                            }
+                        }
+                        catch (SqlException exception)
+                        {
+                            MessageBox.Show(exception.Message);
+                        }
+                    }
+                    Connection.Close();
+                    
+                }
+            }
+            return employee;
         }
     }
-}
+} 

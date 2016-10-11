@@ -16,7 +16,10 @@ namespace eyect4rails.Classes
         public string Password;
         public SqlConnection Connection;
 
-
+        /// <summary>
+        /// Opens a connection to the database
+        /// </summary>
+        /// <returns>true on success false on failure</returns>
         public bool OpenConnection()
         {
             Server = "mssql.fhict.local";
@@ -40,7 +43,10 @@ namespace eyect4rails.Classes
                 return false;
             }
         }
-
+        /// <summary>
+        /// Closes a connection to the database 
+        /// </summary>
+        /// <returns>true on success false on failure</returns>
         public bool CloseConnection()
         {
             try
