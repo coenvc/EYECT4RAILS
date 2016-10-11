@@ -8,6 +8,7 @@ namespace eyect4rails.Classes
 {
     public class Employee
     {
+        #region Properties
         public int Id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
@@ -17,6 +18,7 @@ namespace eyect4rails.Classes
         public Enums.Role Role { get; set; }
         public Address Address { get; set; }
         public Department Department { get; set; }
+        #endregion 
 
         /// <summary>
         /// Constructor om Employee gegevens uit de database op te halen
@@ -65,9 +67,13 @@ namespace eyect4rails.Classes
             this.Department = department;
         }
 
+        /// <summary>
+        /// Zet de Employee om naar een nette string 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            return $"{Id} ";
+            return $"{Name} {Username} {Email} {RFIDCode} {Password} {Name} {Role}";
         }
 
     }

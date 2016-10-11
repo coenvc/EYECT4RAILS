@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,18 @@ namespace eyect4rails
         {
             InitializeComponent();
             EmployeeLogic employeelogic = new EmployeeLogic(repository);
-            Employee myEmployee = employeelogic.GetById(4);
-            MessageBox.Show(myEmployee.Name);
-
-
-
+            try
+            {
+                if (employeelogic.Delete(8) == true)
+                {
+                    MessageBox.Show("Success !");
+                }
+                
+            }
+            catch(SqlException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
 
         }
     }

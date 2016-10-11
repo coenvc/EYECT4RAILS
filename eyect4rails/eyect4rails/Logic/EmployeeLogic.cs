@@ -10,7 +10,7 @@ namespace eyect4rails.Logic
 {
     class EmployeeLogic:IEmployeeRepository
     {
-         IEmployeeRepository IemployeeRepository;
+        private IEmployeeRepository IemployeeRepository;
         public EmployeeLogic(IEmployeeRepository iemployeerepository)
         {
             this.IemployeeRepository = iemployeerepository;

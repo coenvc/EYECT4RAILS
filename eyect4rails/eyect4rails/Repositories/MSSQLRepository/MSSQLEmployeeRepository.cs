@@ -19,6 +19,7 @@ namespace eyect4rails.Repositories
         /// <returns>A list of Employees</returns>
         public List<Employee> GetAll()
         {
+            
             List<Employee> employees = new List<Employee>();
             string query =
                 "select e.id,ac.Username,e.email,ac.RFIDCode,e.name, ac.Password,r.Name,ad.id,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id,d.Name,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid";
@@ -134,7 +135,7 @@ namespace eyect4rails.Repositories
         /// <returns></returns>
         public bool Delete(int id)
         {
-            string query = "DELETE FROM table_name WHERE some_column = @Id";
+            string query = "Delete FROM TaskExecution where employeeId = @id  Delete FROM account where employeeId = @id  DELETE FROM Employee WHERE id = @Id";
             if (OpenConnection() == true)
             {
                 using (SqlCommand command = new SqlCommand(query, Connection))
@@ -168,28 +169,23 @@ namespace eyect4rails.Repositories
         public Employee GetById(int id)
         {
             Employee employee = null;
-            string query ="select e.id,ac.Username,e.email,ac.RFIDCode,e.name, ac.Password,r.Name,ad.id,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id,d.Name,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid where e.id = @myId";
+            string query = $"select e.id as empID,ac.Username,e.email,ac.RFIDCode,e.name as empName, ac.Password,r.Name,ad.id AS addressID,StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id as deptID,d.Name as deptName,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid where e.id = @myId";
             if (OpenConnection() == true)
             {
                 using (SqlCommand command = new SqlCommand(query, Connection))
                 {
-                    command.Parameters.AddWithValue("@myId", id);
+                    command.Parameters.AddWithValue("@myId", id); 
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         try
                         {
                             while (reader.Read())
                             {
-                                    Address address = new Address(Convert.ToInt32(reader["ad.id"]), reader["ad.StreetName"].ToString(),reader["ad.City"].ToString(), reader["ad.Country"].ToString(), reader["ad.ZIPCode"].ToString(),reader["ad.HouseNumber"].ToString());
-                     
-                                    Department department = new Department(Convert.ToInt32(reader[12]),
-                                        reader[13].ToString(), Convert.ToInt32(reader[14]));
-                                    Employee Employee = new Employee(Convert.ToInt32(reader[0]), reader[1].ToString(),
-                                        reader[2].ToString(), Convert.ToInt32(reader[3]), reader[4].ToString(),
-                                        reader[5].ToString(), Role.Admin, address, department);
-                                    employee = Employee;
-                                
-                              
+                                Address address = new Address(Convert.ToInt32(reader["addressID"]), reader["StreetName"].ToString(),reader["City"].ToString(),reader["Country"].ToString(), reader["ZIPCode"].ToString(), reader["HouseNumber"].ToString());
+                                Department department = new Department(Convert.ToInt32(reader["deptID"]), reader["deptName"].ToString(),Convert.ToInt32(reader["AuthorisationLevel"]));
+                                Employee SelectedEmployee = new Employee(Convert.ToInt32(reader["empID"]), reader["Username"].ToString(), reader["email"].ToString(), Convert.ToInt32(reader["RFIDCode"]), reader[4].ToString(),reader["empName"].ToString(), Role.Admin, address, department);
+                                employee = SelectedEmployee;
                             }
                         }
                         catch (SqlException exception)
