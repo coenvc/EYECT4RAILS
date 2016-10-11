@@ -9,20 +9,17 @@ using Task = System.Threading.Tasks.Task;
 
 namespace eyect4rails.Repositories
 {
-        class TaskRepository : ITaskRepository
+        public class TaskRepository : ITaskRepository
         {
             private List<Task> Tasklist;
             private List<Task> TasklistFiltered;
 
             public TaskRepository()
             {
-            //Tasklist = new List<Task>
-            //{
-            //    new CleaningTask(1, false, 1, DateTime.Now, "Small Cleaning Task Performed", DateTime.Today, "Everything seemed alright", CleanTaskType.SmallCleaning),
-            //    new RepairTask(2, false, 3, DateTime.Now, "Test1234", DateTime.Today, "Test1234 comment", RepairTaskType.BigRepair, DateTime.MaxValue),
-            //    new CleaningTask(3, true, 2, DateTime.Now, "Normale Schoonmaak", DateTime.Today, "schoonmaak goed verlopen", CleanTaskType.RegularCleaning)
-            //};
-        }
+                //List<Task> Tasklist = new List<Task>();
+                //Tasklist.Add(new CleanTask(1, false, 1, DateTime.Now, "Small Cleaning Task Performed", DateTime.Today,
+                //    "Everything seemed alright", CleanTaskType.SmallCleaning));
+            }
 
             public List<Task> GetAll()
             {

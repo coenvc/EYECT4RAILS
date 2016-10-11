@@ -31,6 +31,7 @@ namespace eyect4rails.Repositories
                     {
                         while (reader.Read())
                         {
+                            //TODO: colomnamen i.p.v nummers vb: Convert.ToInt32(reader["ad.id"]) i.p.v Convert.ToInt32(reader[7])
                             Address address = new Address(Convert.ToInt32(reader["ad.id"]), reader[7].ToString(),
                                 reader[8].ToString(),
                                 reader[9].ToString(), reader[10].ToString(), reader[11].ToString());

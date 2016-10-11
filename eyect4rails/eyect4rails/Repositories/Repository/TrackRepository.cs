@@ -17,18 +17,9 @@ namespace eyect4rails.Repository
         {
             Tracklist = new List<Track>
             {
-                new Track(1, true, 5, TrackType.ParkTrack),
-                new Track(2, true, 5, TrackType.ParkTrack),
-                new Track(3, true, 5, TrackType.ParkTrack),
-                new Track(4, true, 5, TrackType.ParkTrack),
-                new Track(5, true, 5, TrackType.ParkTrack),
-                new Track(6, true, 5, TrackType.ParkTrack),
-                new Track(7, true, 5, TrackType.ParkTrack),
-                new Track(8, true, 5, TrackType.ParkTrack),
-                new Track(9, true, 5, TrackType.ParkTrack),
-                new Track(10, true, 5, TrackType.ParkTrack),
-                new Track(11, true, 5, TrackType.ParkTrack),
-                new Track(12, true, 5, TrackType.ParkTrack)
+                ///
+                /// HERE WILL BE A LIST FILLING THE TRACKLIST
+                /// 
             };
         }
 
@@ -65,7 +56,7 @@ namespace eyect4rails.Repository
                     selectedTrack.Number = track.Number;
                     selectedTrack.ConductorRequired = track.ConductorRequired;
                     selectedTrack.Sectors = track.Sectors;
-                    selectedTrack.Tracktype = track.Tracktype;
+                    selectedTrack.SetTrackType(track.TrackType);
                 }
             }
         }

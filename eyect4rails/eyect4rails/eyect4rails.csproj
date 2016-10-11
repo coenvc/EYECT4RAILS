@@ -47,21 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Address.cs" />
-    <Compile Include="Classes\CleanTask.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Remise.cs" />
-    <Compile Include="Classes\RepairTask.cs" />
     <Compile Include="Classes\Task.cs" />
     <Compile Include="Classes\Track.cs" />
     <Compile Include="Classes\Tram.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Database.cs" />
-    <Compile Include="Enums\CleanTaskType.cs" />
-    <Compile Include="Enums\RepairTaskType.cs" />
-    <Compile Include="Enums\Role.cs" />
-    <Compile Include="Enums\StatusType.cs" />
-    <Compile Include="Enums\TrackType.cs" />
-    <Compile Include="Enums\TramType.cs" />
+    <Compile Include="Classes\Role.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,12 +66,14 @@
     <Compile Include="IRepository\IDepartmentRepository.cs" />
     <Compile Include="IRepository\IEmployeeRepository.cs" />
     <Compile Include="IRepository\IRemiseRepository.cs" />
+    <Compile Include="IRepository\IRoleRepository.cs" />
     <Compile Include="IRepository\ITaskRepository.cs" />
     <Compile Include="IRepository\ITrackRepository.cs" />
     <Compile Include="IRepository\ITramRepository.cs" />
     <Compile Include="Logic\AccountLogic.cs" />
     <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\RemiseLogic.cs" />
+    <Compile Include="Logic\RoleLogic.cs" />
     <Compile Include="Logic\TaskLogic.cs" />
     <Compile Include="Logic\TramTransferLogic.cs" />
     <Compile Include="Program.cs" />
@@ -86,6 +81,7 @@
     <Compile Include="Logic\TrackLogic.cs" />
     <Compile Include="Logic\TramLogic.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLAccountRepository.cs" />
+    <Compile Include="Repositories\MSSQLRepository\MSSQLRemiseRepository.cs" />
     <Compile Include="Repositories\Repository\AccountRepository.cs" />
     <Compile Include="Repositories\Repository\AddressRepository.cs" />
     <Compile Include="Repositories\Repository\DepartmentRepository.cs" />
@@ -93,6 +89,7 @@
     <Compile Include="Repositories\MSSQLRepository\MSSQLEmployeeRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLTaskRepository.cs" />
     <Compile Include="Repositories\Repository\RemiseRepository.cs" />
+    <Compile Include="Repositories\Repository\RoleRepository.cs" />
     <Compile Include="Repositories\Repository\TaskRepository.cs" />
     <Compile Include="Repositories\Repository\TrackRepository.cs" />
     <Compile Include="Repositories\Repository\TramRepository.cs" />
