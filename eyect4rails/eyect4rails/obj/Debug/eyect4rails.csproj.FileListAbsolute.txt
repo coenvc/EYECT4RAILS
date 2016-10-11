@@ -18,3 +18,6 @@ C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\ey
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
 >>>>>>> origin/master
+C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
+C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
+C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
