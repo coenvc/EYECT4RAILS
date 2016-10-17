@@ -6,18 +6,15 @@ C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\ey
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.pdb
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
-<<<<<<< HEAD
 C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
 C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csprojResolveAssemblyReference.cache
 C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Properties.Resources.resources
 C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csproj.GenerateResource.Cache
-=======
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
->>>>>>> origin/master
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
@@ -26,3 +23,6 @@ C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\ey
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csproj.GenerateResource.Cache
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.pdb
+C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csprojResolveAssemblyReference.cache
+C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Properties.Resources.resources
+C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csproj.GenerateResource.Cache
