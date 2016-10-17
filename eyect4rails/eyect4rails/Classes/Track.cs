@@ -11,6 +11,7 @@ namespace eyect4rails.Classes
         public int Number;
         public bool ConductorRequired;
         public int Sectors;
+        public List<Tram> TramList;
         public string TrackType { get; private set; }
 
         public Track(int number, bool conductorRequired, int sectors, string tracktype)
