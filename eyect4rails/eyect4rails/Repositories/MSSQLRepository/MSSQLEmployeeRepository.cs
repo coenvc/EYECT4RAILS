@@ -22,7 +22,7 @@ namespace eyect4rails.Repositories
             
             List<Employee> employees = new List<Employee>();
             string query =
-                "select e.id,ac.Username,e.email,ac.RFIDCode,e.name, ac.Password,r.Name,ad.id,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id,d.Name,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid";
+                $"select e.id as EmployeeID, e.name as Name,ac.Username as Username, ac.Password as Password,e.email as Email,ac.RFIDCode,r.Name as Role,ad.id as AddressID,ad.StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id as DepartmentID,d.Name as DepartmentName,d.AuthorisationLevel as DepartmentAuthLevel From Employee e INNER JOIN Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid";
             if (OpenConnection() == true)
             {
                 using (SqlCommand command = new SqlCommand(query, Connection))
@@ -32,15 +32,22 @@ namespace eyect4rails.Repositories
                         while (reader.Read())
                         {
                             Role role = new Role(3, "Admin");
-                            //TODO: colomnamen i.p.v nummers vb: Convert.ToInt32(reader["ad.id"]) i.p.v Convert.ToInt32(reader[7])
-                            Address address = new Address(Convert.ToInt32(reader["ad.id"]), reader[7].ToString(),
-                                reader[8].ToString(),
-                                reader[9].ToString(), reader[10].ToString(), reader[11].ToString());
-                            Department department = new Department(Convert.ToInt32(reader[12]), reader[13].ToString(),
-                                Convert.ToInt32(reader[14]));
-                            Employee employee = new Employee(Convert.ToInt32(reader[0]), reader[1].ToString(),
-                                reader[2].ToString(), Convert.ToInt32(reader[3]), reader[4].ToString(),
-                                reader[5].ToString(), role, address, department);
+                            Address address = new Address(Convert.ToInt32(reader["AddressID"]), 
+                                reader["StreetName"].ToString(),
+                                reader["City"].ToString(),
+                                reader["Country"].ToString(), 
+                                reader["ZIPCode"].ToString(), 
+                                reader["HouseNumber"].ToString());
+                            Department department = new Department(Convert.ToInt32(reader["DepartmentID"]), 
+                                reader["DepartmentName"].ToString(),
+                                Convert.ToInt32(reader["DepartmentAuthLevel"]));
+                            Employee employee = new Employee(Convert.ToInt32(reader["EmployeeID"]), 
+                                reader["Username"].ToString(),
+                                reader["Email"].ToString(), 
+                                Convert.ToInt32(reader["RFIDCode"]), 
+                                reader["Password"].ToString(),
+                                reader["Name"].ToString(), 
+                                role, address, department);
                             employees.Add(employee);
                         }
                     }
