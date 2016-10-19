@@ -69,12 +69,7 @@ namespace eyect4rails.Logic
         {
             throw new NotImplementedException();
         }
-
-        public bool SetParkedTrack(Tram tram, Track track)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public bool Insert(Tram tram)
         {
             throw new NotImplementedException();

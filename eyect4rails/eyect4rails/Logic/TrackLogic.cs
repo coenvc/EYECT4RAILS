@@ -41,5 +41,7 @@ namespace eyect4rails.Logic
         {
             return Context.Delete(id);
         }
+
+       
     }
 }

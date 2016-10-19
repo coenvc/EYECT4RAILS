@@ -8,18 +8,20 @@ namespace eyect4rails.Classes
 {
     public class Track
     {
-        public int Number;
+        public int Id;
         public bool ConductorRequired;
         public int Sectors;
+        public List<Tram> TramList;
         public string TrackType { get; private set; }
 
-        public Track(int number, bool conductorRequired, int sectors, string tracktype)
+        public Track(int id, bool conductorRequired, int sectors, string tracktype)
         {
-            this.Number = number;
+            this.Id = id;
             this.ConductorRequired = conductorRequired;
             this.Sectors = sectors;
             SetTrackType(tracktype);
         }
+        
 
         public bool SetTrackType(string type)
         {
