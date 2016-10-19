@@ -201,8 +201,7 @@ namespace eyect4rails.Repositories
                             MessageBox.Show(exception.Message);
                         }
                     }
-                    Connection.Close();
-                    
+                    CloseConnection();
                 }
             }
             return employee;

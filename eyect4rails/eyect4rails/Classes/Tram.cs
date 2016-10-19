@@ -15,12 +15,12 @@ namespace eyect4rails.Classes
         public bool IsParked;
 
 
-        public Tram(int id, string tramtype, int sectors, bool isParked)
+        public Tram(int id, string tramtype, int sectors, string status)
         {
             this.Id = id;
             SetTramType(tramtype);
             this.Sectors = sectors;
-            this.IsParked = isParked;
+            SetTramStatus(status);
         }
 
         public bool SetTramType(string type)
