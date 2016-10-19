@@ -26,3 +26,13 @@ C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\ey
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csprojResolveAssemblyReference.cache
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Properties.Resources.resources
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.csproj.GenerateResource.Cache
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Form1.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.RemiseForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.PlaatsenTramForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.ReserveerTramForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.VeranderStatusTramForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.VerwijderTramForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.TramInformatieForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.SpoorInformatieForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.UpdateSpoorForm.resources
+C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.VeranderStatusSpoorForm.resources
