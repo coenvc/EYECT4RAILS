@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace eyect4rails
 {
-    public partial class TaskForm : Form
+    public partial class AdminPanel2 : Form
     {
-        public TaskForm()
+        public AdminPanel2()
         {
             InitializeComponent();
         }
-
-        public object Completed { get; internal set; }
     }
 }
