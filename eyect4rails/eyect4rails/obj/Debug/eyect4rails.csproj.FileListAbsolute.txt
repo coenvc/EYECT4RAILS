@@ -21,3 +21,12 @@ C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\ey
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Clean.resources
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Repair.resources
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.In__en_uitrijsysteem.resources
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.pdb
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.AdminPanelForm.resources
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.In__en_uitrijsysteemForm.resources
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.Task.resources
+C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.TaskForm.resources
