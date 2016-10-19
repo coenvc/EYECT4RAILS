@@ -81,6 +81,7 @@
     <Compile Include="Logic\TrackLogic.cs" />
     <Compile Include="Logic\TramLogic.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLAccountRepository.cs" />
+    <Compile Include="Repositories\MSSQLRepository\MSSQLTrackRepository.cs" />
     <Compile Include="Repositories\Repository\AccountRepository.cs" />
     <Compile Include="Repositories\Repository\AddressRepository.cs" />
     <Compile Include="Repositories\Repository\DepartmentRepository.cs" />

@@ -60,8 +60,6 @@ namespace eyect4rails.Repositories
             {
                 return null;
             }
-
-
         }
 
         /// <summary>
