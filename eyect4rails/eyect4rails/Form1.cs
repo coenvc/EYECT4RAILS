@@ -19,6 +19,7 @@ namespace eyect4rails
 {
     public partial class Form1 : Form
     {
+        private int AuthorityLevel;
 
         public Form1()
         {
@@ -27,6 +28,8 @@ namespace eyect4rails
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            AuthorityLevel = 1;
+            switch (AuthorityLevel)
             {
                 //Admin
                 case 1: RemiseForm remiseForm = new RemiseForm();
