@@ -27,6 +27,11 @@ namespace eyect4rails.Logic
             return Context.GetById(id);
         }
 
+        public bool SetParkedTrack(Tram tram, Track track)
+        {
+            return Context.SetParkedTrack(tram, track);
+        }
+
         public bool Insert(Tram tram)
         {
             return Context.Insert(tram);

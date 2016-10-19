@@ -39,6 +39,20 @@ namespace eyect4rails.Repository
             }
             return null;
         }
+
+        public bool SetParkedTrack(Tram tram, Track track)
+        {
+            foreach (Tram tramlistitem in Tramlist)
+            {
+                if (tramlistitem == tram)
+                {
+                    tram.IsParked = true;
+                    tram.ParkedTrack = track;
+                    return true;
+                }
+            }
+            return false;
+        }
         
         public bool Insert(Tram tram)
         {
@@ -56,6 +70,7 @@ namespace eyect4rails.Repository
                     tramlistitem.SetTramType(tram.TramType);
                     tramlistitem.Sectors = tram.Sectors;
                     tramlistitem.IsParked = tram.IsParked;
+                    tramlistitem.ParkedTrack = tram.ParkedTrack;
                 }
             }
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using eyect4rails.Classes;
+using System.Threading.Tasks;
 
 namespace eyect4rails.IRepository
 {

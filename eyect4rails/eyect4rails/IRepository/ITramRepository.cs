@@ -8,7 +8,8 @@ namespace eyect4rails.IRepository
         List<Tram> GetAll();
 
         Tram GetById(int id);
-       
+
+        bool SetParkedTrack(Tram tram, Track track);
 
         bool Insert(Tram tram);
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using eyect4rails.Classes;
 using eyect4rails.IRepository;
+using Task = System.Threading.Tasks.Task;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -16,7 +17,7 @@ namespace eyect4rails.Repositories
         /// </summary>
         public List<Task> GetAll()
         {
-            //TODO:
+            TODO:
             throw new NotImplementedException();
         }
 
@@ -25,7 +26,7 @@ namespace eyect4rails.Repositories
         /// </summary>
         public Task GetById(int id)
         {
-            //TODO:
+            TODO:
             throw new NotImplementedException();
         }
 
@@ -34,7 +35,7 @@ namespace eyect4rails.Repositories
         /// </summary>
         public bool Insert(Task task)
         {
-            //TODO:
+            TODO:
             throw new NotImplementedException();
         }
 
@@ -43,7 +44,7 @@ namespace eyect4rails.Repositories
         /// </summary>
         public void Update(int id, Task task)
         {
-            //TODO:
+            TODO:
             throw new NotImplementedException();
         }
 
@@ -52,7 +53,7 @@ namespace eyect4rails.Repositories
         /// </summary>
         public bool Delete(int id)
         {
-            //TODO:
+            TODO:
             throw new NotImplementedException();
         }
     }
