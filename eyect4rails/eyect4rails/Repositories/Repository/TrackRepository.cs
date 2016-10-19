@@ -33,7 +33,7 @@ namespace eyect4rails.Repository
         {
             foreach (Track track in Tracklist)
             {
-                if (track.Number == id)
+                if (track.Id == id)
                 {
                     return track;
                 }
@@ -52,9 +52,9 @@ namespace eyect4rails.Repository
         {
             foreach (Track selectedTrack in Tracklist)
             {
-                if (selectedTrack.Number == id)
+                if (selectedTrack.Id == id)
                 {
-                    selectedTrack.Number = track.Number;
+                    selectedTrack.Id = track.Id;
                     selectedTrack.ConductorRequired = track.ConductorRequired;
                     selectedTrack.Sectors = track.Sectors;
                     selectedTrack.SetTrackType(track.TrackType);
@@ -66,7 +66,7 @@ namespace eyect4rails.Repository
         {
             foreach (Track track in Tracklist)
             {
-                if (track.Number == id)
+                if (track.Id == id)
                 {
                     Tracklist.Remove(track);
                     return true;
@@ -87,7 +87,7 @@ namespace eyect4rails.Repository
             
             foreach (Track track in Tracklist)
             {
-                if (track.Number == trackID)
+                if (track.Id == trackID)
                 {
                     int sectortrack = track.Sectors;
                     int usedsectors = 0;
