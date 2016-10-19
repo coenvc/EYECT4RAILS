@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\AdminPanel2\AdminPanel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminPanel2\AdminPanel2.Designer.cs">
+      <DependentUpon>AdminPanel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Remise.cs" />
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\In-and-out\In-OutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\In-and-out\In-OutForm.Designer.cs">
+      <DependentUpon>In-OutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IRepository\IAccountRepository.cs" />
     <Compile Include="IRepository\IAddressRepository.cs" />
@@ -92,6 +104,21 @@
     <Compile Include="Repositories\Repository\TaskRepository.cs" />
     <Compile Include="Repositories\Repository\TrackRepository.cs" />
     <Compile Include="Repositories\Repository\TramRepository.cs" />
+    <Compile Include="GUI\Task\TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Task\TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\AdminPanel2\AdminPanel2.resx">
+      <DependentUpon>AdminPanel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\In-and-out\In-OutForm.resx">
+      <DependentUpon>In-OutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Task\TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,10 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\AdminPanel\" />
-    <Folder Include="GUI\Clean\" />
-    <Folder Include="GUI\In-and-out\" />
     <Folder Include="GUI\Remise\" />
-    <Folder Include="GUI\Repair\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
