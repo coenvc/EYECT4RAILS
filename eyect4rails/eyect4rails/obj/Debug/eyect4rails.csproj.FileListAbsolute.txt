@@ -15,6 +15,7 @@ C:\Users\Araxor-PC\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debu
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\Thijs\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
+<<<<<<< HEAD
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
@@ -40,4 +41,6 @@ C:\Users\coenv\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\eyect4rails\
 C:\Users\Reinoud\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\bin\Debug\eyect4rails.exe.config
 C:\Users\Reinoud\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.exe
 C:\Users\Reinoud\Documents\GitHub\eyect4rails\eyect4rails\eyect4rails\obj\Debug\eyect4rails.pdb
+=======
+>>>>>>> parent of bcc3a39... Classes omgseschreven naar reinoud
 >>>>>>> origin/master
