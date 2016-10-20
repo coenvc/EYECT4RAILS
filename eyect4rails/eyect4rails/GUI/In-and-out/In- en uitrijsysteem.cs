@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace eyect4rails
 {
-    public partial class TaskForm : Form
+    public partial class In__en_uitrijsysteemForm : Form
     {
-        public TaskForm()
+        public In__en_uitrijsysteemForm()
         {
             InitializeComponent();
         }
