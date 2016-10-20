@@ -31,7 +31,6 @@ namespace eyect4rails.Repositories
                     {
                         while (reader.Read())
                         {
-                            Role role = new Role(3, "Admin");
                             //TODO: colomnamen i.p.v nummers vb: Convert.ToInt32(reader["ad.id"]) i.p.v Convert.ToInt32(reader[7])
                             Address address = new Address(Convert.ToInt32(reader["ad.id"]), reader[7].ToString(),
                                 reader[8].ToString(),
@@ -40,7 +39,7 @@ namespace eyect4rails.Repositories
                                 Convert.ToInt32(reader[14]));
                             Employee employee = new Employee(Convert.ToInt32(reader[0]), reader[1].ToString(),
                                 reader[2].ToString(), Convert.ToInt32(reader[3]), reader[4].ToString(),
-                                reader[5].ToString(), role, address, department);
+                                reader[5].ToString(), Role.Admin, address, department);
                             employees.Add(employee);
                         }
                     }
@@ -71,7 +70,7 @@ namespace eyect4rails.Repositories
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@RoleId", employee.Role.Id);
+                        command.Parameters.AddWithValue("@RoleId", (int) employee.Role);
                         command.Parameters.AddWithValue("@DepartmentID", employee.Department.Id);
                         command.Parameters.AddWithValue("@AddressID", employee.Address.Id);
                         command.Parameters.AddWithValue("@Name", employee.Name);
@@ -111,7 +110,7 @@ namespace eyect4rails.Repositories
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@RoleId", employee.Role.Id);
+                        command.Parameters.AddWithValue("@RoleId", (int) employee.Role);
                         command.Parameters.AddWithValue("@DepartmentID", employee.Department.Id);
                         command.Parameters.AddWithValue("@AddressID", employee.Address.Id);
                         command.Parameters.AddWithValue("@Name", employee.Name);
@@ -171,7 +170,7 @@ namespace eyect4rails.Repositories
         public Employee GetById(int id)
         {
             Employee employee = null;
-            string query = $"select e.id as empID,ac.Username,e.email,ac.RFIDCode,e.name as empName, ac.Password,r.Name,r.Id,ad.id AS addressID,StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id as deptID,d.Name as deptName,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid where e.id = @myId";
+            string query = $"select e.id as empID,ac.Username,e.email,ac.RFIDCode,e.name as empName, ac.Password,r.Name,ad.id AS addressID,StreetName,ad.City,ad.Country,ad.ZIPCode,ad.HouseNumber,d.id as deptID,d.Name as deptName,d.AuthorisationLevel from Employee e  inner join Address ad on e.AddressID = ad.id inner join Account ac on ac.EmployeeID = e.id inner join Department d on d.ID = e.DepartmentID inner join role r on r.id = e.roleid where e.id = @myId";
             if (OpenConnection() == true)
             {
                 using (SqlCommand command = new SqlCommand(query, Connection))
@@ -184,10 +183,9 @@ namespace eyect4rails.Repositories
                         {
                             while (reader.Read())
                             {
-                                Role role = new Role(Convert.ToInt32(reader["r.id"]), reader["r.Name"].ToString());
                                 Address address = new Address(Convert.ToInt32(reader["addressID"]), reader["StreetName"].ToString(),reader["City"].ToString(),reader["Country"].ToString(), reader["ZIPCode"].ToString(), reader["HouseNumber"].ToString());
                                 Department department = new Department(Convert.ToInt32(reader["deptID"]), reader["deptName"].ToString(),Convert.ToInt32(reader["AuthorisationLevel"]));
-                                Employee SelectedEmployee = new Employee(Convert.ToInt32(reader["empID"]), reader["Username"].ToString(), reader["email"].ToString(), Convert.ToInt32(reader["RFIDCode"]), reader[4].ToString(),reader["empName"].ToString(),role ,address, department);
+                                Employee SelectedEmployee = new Employee(Convert.ToInt32(reader["empID"]), reader["Username"].ToString(), reader["email"].ToString(), Convert.ToInt32(reader["RFIDCode"]), reader[4].ToString(),reader["empName"].ToString(), Role.Admin, address, department);
                                 employee = SelectedEmployee;
                             }
                         }

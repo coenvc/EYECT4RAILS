@@ -57,22 +57,20 @@ namespace eyect4rails.Repository
             //EmployeesList.Add(casper);
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Gets all employees
         /// </summary>
         /// <returns>List of employees</returns>
         public List<Employee> GetAllEmployees()
-        {
-            List<Employee> GetAllEmployees = new List<Employee>();
-
-            return GetAllEmployees;
-        }
-
+=======
         public List<Employee> GetAll()
+>>>>>>> origin/master
         {
             return EmployeesList;
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Get employee by id
         /// loop through EmployeeList till right employee is found
@@ -80,12 +78,9 @@ namespace eyect4rails.Repository
         /// <param name="id"></param>
         /// <returns>employee object</returns>
         public Employee GetEmployeeById(int id)
-        {
-            Employee e = null;
-            return e;
-        }
-
+=======
         public Employee GetById(int id)
+>>>>>>> origin/master
         {
             foreach (Employee employee in EmployeesList)
             {
